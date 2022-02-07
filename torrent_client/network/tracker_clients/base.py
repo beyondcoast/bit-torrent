@@ -41,6 +41,10 @@ class BaseTrackerClient:
 
 
 def parse_compact_peers_list(data: bytes) -> List[Peer]:
+    # Take a compact form peers list and return a list of ip/port type versions
+    with open("peerlog.log","wb") as f:
+        f.write(data)
+    #print("Got compact peers list: %s" % data.decode('utf-8'))
     if len(data) % 6 != 0:
         raise ValueError('Invalid length of a compact representation of peers')
     return list(map(Peer.from_compact_form, grouper(data, 6)))

@@ -4,6 +4,7 @@ from torrent_client.models import DownloadInfo
 from torrent_client.network.tracker_clients.base import *
 from torrent_client.network.tracker_clients.http import *
 from torrent_client.network.tracker_clients.udp import *
+from torrent_client.network.tracker_clients.dht import *
 
 
 def create_tracker_client(announce_url: str, download_info: DownloadInfo, our_peer_id: bytes) -> BaseTrackerClient:
@@ -13,6 +14,7 @@ def create_tracker_client(announce_url: str, download_info: DownloadInfo, our_pe
         'http': HTTPTrackerClient,
         'https': HTTPTrackerClient,
         'udp': UDPTrackerClient,
+        'dht': DHTTrackerClient,
     }
     if scheme not in protocols:
         raise ValueError('announce_url uses unknown protocol "{}"'.format(scheme))

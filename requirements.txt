@@ -3,5 +3,5 @@ async-timeout==3.0.0
 bencodepy==0.9.5
 bitarray==0.8.1
 chardet==3.0.4
-multidict==4.5
+multidict
 sip==5.1.0

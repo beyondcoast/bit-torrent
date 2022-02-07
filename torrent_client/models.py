@@ -27,6 +27,7 @@ class Peer:
         self._port = port
         self.peer_id = peer_id
 
+        # FIXME what hash is being used here??
         self._hash = hash((host, port))  # Important for performance
 
     @property

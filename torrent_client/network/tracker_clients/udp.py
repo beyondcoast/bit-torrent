@@ -13,7 +13,6 @@ from torrent_client.network.tracker_clients.base import BaseTrackerClient, Event
 
 __all__ = ['UDPTrackerClient']
 
-
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 

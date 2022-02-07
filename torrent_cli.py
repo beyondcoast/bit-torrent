@@ -14,9 +14,7 @@ from typing import List
 from torrent_client.control import ControlManager, ControlClient, ControlServer, DaemonExit, formatters
 from torrent_client.models import TorrentInfo, TorrentState
 
-
 logging.basicConfig(format='%(levelname)s %(asctime)s %(name)-23s %(message)s', datefmt='%H:%M:%S')
-
 
 async def check_daemon_absence():
     try:
@@ -26,7 +24,6 @@ async def check_daemon_absence():
         pass
     else:
         raise RuntimeError('The daemon is already running')
-
 
 def run_daemon(_):
     with closing(asyncio.get_event_loop()) as loop:
